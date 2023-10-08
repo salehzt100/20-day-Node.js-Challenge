@@ -1,4 +1,4 @@
-# Thinking in modules
+# Thinking in modules 
 
 When developing node.js apps, it's essential to think about modules as separate pieces of functionality that can be easily maintained and reused. By dividing your code into smaller, self-contained modules, you can create more modular, maintainable, reusable, and efficient code.
 
