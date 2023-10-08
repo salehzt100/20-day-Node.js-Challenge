@@ -60,6 +60,37 @@ yargs(hideBin(process.argv))
   })
   .demandCommand(1)
   .parse()
+
+
+```
+
+another example : 
+
+```jsx
+
+import yargs from 'yargs'
+import { hideBin } from 'yargs/helpers'
+yargs(hideBin(process.argv)).check((argv) => {
+    if (!isNaN(argv.name)) {
+        console.error('Error: The name must be a string value.');
+        process.exit(1)
+    }
+    return true; // Validation passed
+})
+    .command('hello [name]', 'welcome', (yargs) => {
+        return yargs.option('name', {
+            type: 'string',
+            describe: 'name to print hello name',
+            default: 'saleh'
+        });
+    }, (argv) => {
+        console.log(`hello ${argv.name}`);
+    })
+    .demandCommand(1)
+    .parse();
+
+
+
 ```
 
 We’re using yargs to setup different commands we can use from our cli, for example, the new command can be used like:
